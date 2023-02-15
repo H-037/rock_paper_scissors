@@ -28,6 +28,7 @@ function prock() {
     }
 }
 
+//playing game with playerchoice = paper
 function ppaper() {
     let a = paper;
     let b = getComputorChoice();
@@ -43,6 +44,7 @@ function ppaper() {
     }
 }
 
+//playing game with playerchoice = scissor
 function pscissor() {
     let a = "scissor";
     let b = getComputorChoice();
@@ -59,6 +61,10 @@ function pscissor() {
 }
 
 //showing Result
-const result = document.createElement('div');
-result.textContent = prock();
-container.appendChild(result);
+const showRock = document.getElementById('rock')
+showRock.addEventListener('click', srock);
+function srock(){
+    const result = document.createElement('div');
+    result.textContent = prock();
+    container.appendChild(result);
+}
