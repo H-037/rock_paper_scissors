@@ -30,7 +30,7 @@ function prock() {
 
 //playing game with playerchoice = paper
 function ppaper() {
-    let a = paper;
+    let a = "paper";
     let b = getComputorChoice();
     let string = a+b;
     if (string ==="paperpaper") {
@@ -60,11 +60,29 @@ function pscissor() {
     }
 }
 
-//showing Result
+//showing Result for pchoice rock
 const showRock = document.getElementById('rock')
 showRock.addEventListener('click', srock);
 function srock(){
     const result = document.createElement('div');
     result.textContent = prock();
+    container.appendChild(result);
+}
+
+//showing Result for pchoice paper
+const showPaper = document.getElementById('paper')
+showPaper.addEventListener('click', spaper);
+function spaper(){
+    const result = document.createElement('div');
+    result.textContent = ppaper();
+    container.appendChild(result);
+}
+
+//showing Result for pchoice scissor
+const showScissor = document.getElementById('scissor')
+showScissor.addEventListener('click', sscissor);
+function sscissor(){
+    const result = document.createElement('div');
+    result.textContent = pscissor();
     container.appendChild(result);
 }
