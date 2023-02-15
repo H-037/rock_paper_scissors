@@ -1,3 +1,10 @@
+//make h1
+const container = document.querySelector('#container');
+const content = document.createElement('h1');
+content.classList.add('content');
+content.textContent = 'Rock Paper Scissor';
+container.appendChild(content);
+
 //display one of 3 variables (rock, paper, scissor)
 function getComputorChoice() {
     const cchoice = ["rock", "paper", "scissor"]
@@ -39,4 +46,8 @@ function rules() {
         return "You lose! Scissor beat\’s paper";
     }
 }
-console.log(rules());
+
+//showing Result
+const result = document.createElement('div');
+result.textContent = rules();
+container.appendChild(result);
