@@ -7,6 +7,13 @@ function getComputorChoice() {
 
 
 
+
+//counter
+let i = 0;
+let playercounter = document.getElementById("pcounter");
+
+
+//all 3 buttons display round played
 //button paper execute play
 let buttonrock = document.getElementById("rock");
 buttonrock.addEventListener("click", rockround);
@@ -44,6 +51,8 @@ function rockround(){
             return "Its a Tie! Try again.";
         }
         if (string ==="rockscissor") {
+            i++;
+            playercounter.innerText = i;
             return "You win! Rock beat\’s scissor";
         }
         if (string ==="rockpaper") {
@@ -51,7 +60,6 @@ function rockround(){
         }
     }
 }
-
 
 
 //button paper execute play
@@ -91,6 +99,8 @@ function paperround(){
             return "Its a Tie! Try again.";
         }
         if (string ==="paperrock") {
+            i++;
+            playercounter.innerText = i;
             return "You win! Paper beat\’s rock";
         }
         if (string ==="paperscissor") {
@@ -98,7 +108,6 @@ function paperround(){
         }
     }
 }
-
 
 
 //button scissor execute play
@@ -134,10 +143,13 @@ function scissorround(){
         let a = playerchoice.innerText;
         let b = computorchoice.innerText;
         let string = a+b;
+        console.log(i);
         if (string ==="scissorscissor") {
             return "Its a Tie! Try again.";
         }
         if (string ==="scissorpaper") {
+            i++;
+            playercounter.innerText = i;
             return "You win! Scissor beat\’s paper";
         }
         if (string ==="scissorrock") {
