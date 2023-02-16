@@ -7,10 +7,12 @@ function getComputorChoice() {
 
 
 
-
-//counter
+//playercounter
 let i = 0;
 let playercounter = document.getElementById("pcounter");
+//computorcounter
+let j = 0;
+let computorcounter = document.getElementById("ccounter");
 
 
 //all 3 buttons display round played
@@ -56,6 +58,8 @@ function rockround(){
             return "You win! Rock beat\’s scissor";
         }
         if (string ==="rockpaper") {
+            j++;
+            computorcounter.innerText = j;
             return "You lose! Paper beat\’s rock";
         }
     }
@@ -104,6 +108,8 @@ function paperround(){
             return "You win! Paper beat\’s rock";
         }
         if (string ==="paperscissor") {
+            j++;
+            computorcounter.innerText = j;
             return "You lose! Scissor beat\’s paper";
         }
     }
@@ -153,6 +159,8 @@ function scissorround(){
             return "You win! Scissor beat\’s paper";
         }
         if (string ==="scissorrock") {
+            j++;
+            computorcounter.innerText = j;
             return "You lose! Rock beat\’s scissor";
         }
     }
