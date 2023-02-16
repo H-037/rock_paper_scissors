@@ -5,3 +5,143 @@ function getComputorChoice() {
     return cchoice[random];
 }
 
+
+
+//button paper execute play
+let buttonrock = document.getElementById("rock");
+buttonrock.addEventListener("click", rockround);
+
+function rockround(){
+    //adding divs for showing decisions
+    let container = document.getElementById("container");
+    let round = document.createElement("div");
+    round.classList.add("round");
+    container.appendChild(round);
+
+    let playerchoice = document.createElement("div");
+    playerchoice.classList.add("playerchoice");
+    round.appendChild(playerchoice);
+    let result = document.createElement("div");
+    result.classList.add("result");
+    round.appendChild(result);
+    let computorchoice = document.createElement("div");
+    computorchoice.classList.add("computorchoice");
+    round.appendChild(computorchoice);
+
+    //adding computorchoice into divs
+    computorchoice.innerText = getComputorChoice();
+
+    //adding playerchoice ROCK
+    playerchoice.innerText = "rock";
+
+    //adding result
+    result.innerText = rockcompare();
+    function rockcompare(){
+        let a = playerchoice.innerText;
+        let b = computorchoice.innerText;
+        let string = a+b;
+        if (string ==="rockrock") {
+            return "Its a Tie! Try again.";
+        }
+        if (string ==="rockscissor") {
+            return "You win! Rock beat\’s scissor";
+        }
+        if (string ==="rockpaper") {
+            return "You lose! Paper beat\’s rock";
+        }
+    }
+}
+
+
+
+//button paper execute play
+let buttonpaper = document.getElementById("paper");
+buttonpaper.addEventListener("click", paperround);
+
+function paperround(){
+    //adding divs for showing decisions
+    let container = document.getElementById("container");
+    let round = document.createElement("div");
+    round.classList.add("round");
+    container.appendChild(round);
+
+    let playerchoice = document.createElement("div");
+    playerchoice.classList.add("playerchoice");
+    round.appendChild(playerchoice);
+    let result = document.createElement("div");
+    result.classList.add("result");
+    round.appendChild(result);
+    let computorchoice = document.createElement("div");
+    computorchoice.classList.add("computorchoice");
+    round.appendChild(computorchoice);
+
+    //adding computorchoice into divs
+    computorchoice.innerText = getComputorChoice();
+
+    //adding playerchoice ROCK
+    playerchoice.innerText = "paper";
+
+    //adding result
+    result.innerText = papercompare();
+    function papercompare(){
+        let a = playerchoice.innerText;
+        let b = computorchoice.innerText;
+        let string = a+b;
+        if (string ==="paperpaper") {
+            return "Its a Tie! Try again.";
+        }
+        if (string ==="paperrock") {
+            return "You win! Paper beat\’s rock";
+        }
+        if (string ==="paperscissor") {
+            return "You lose! Scissor beat\’s paper";
+        }
+    }
+}
+
+
+
+//button scissor execute play
+let buttonscissor = document.getElementById("scissor");
+buttonscissor.addEventListener("click", scissorround);
+
+function scissorround(){
+    //adding divs for showing decisions
+    let container = document.getElementById("container");
+    let round = document.createElement("div");
+    round.classList.add("round");
+    container.appendChild(round);
+
+    let playerchoice = document.createElement("div");
+    playerchoice.classList.add("playerchoice");
+    round.appendChild(playerchoice);
+    let result = document.createElement("div");
+    result.classList.add("result");
+    round.appendChild(result);
+    let computorchoice = document.createElement("div");
+    computorchoice.classList.add("computorchoice");
+    round.appendChild(computorchoice);
+
+    //adding computorchoice into divs
+    computorchoice.innerText = getComputorChoice();
+
+    //adding playerchoice ROCK
+    playerchoice.innerText = "scissor";
+
+    //adding result
+    result.innerText = scissorcompare();
+    function scissorcompare(){
+        let a = playerchoice.innerText;
+        let b = computorchoice.innerText;
+        let string = a+b;
+        if (string ==="scissorscissor") {
+            return "Its a Tie! Try again.";
+        }
+        if (string ==="scissorpaper") {
+            return "You win! Scissor beat\’s paper";
+        }
+        if (string ==="scissorrock") {
+            return "You lose! Rock beat\’s scissor";
+        }
+    }
+}
