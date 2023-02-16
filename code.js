@@ -15,6 +15,15 @@ let j = 0;
 let computorcounter = document.getElementById("ccounter");
 
 
+
+//ending game when one has 5 points & result
+function disable(){
+    buttonrock.disabled = "true";
+    buttonpaper.disabled = "true";
+    buttonscissor.disabled = "true";
+}
+
+
 //all 3 buttons display round played
 //button paper execute play
 let buttonrock = document.getElementById("rock");
@@ -62,6 +71,16 @@ function rockround(){
             computorcounter.innerText = j;
             return "You lose! Paper beat\’s rock";
         }
+    }
+    if(i === 5){
+        let result = document.getElementById("result");
+        result.innerText = "You Won! " + i + " : " + j;
+        disable();
+    }
+    if(j === 5){
+        let result = document.getElementById("result");
+        result.innerText = "You Lost! " + i + " : " + j;
+        disable();
     }
 }
 
@@ -113,6 +132,16 @@ function paperround(){
             return "You lose! Scissor beat\’s paper";
         }
     }
+    if(i === 5){
+        let result = document.getElementById("result");
+        result.innerText = "You Won! " + i + " : " + j;
+        disable();
+    }
+    if(j === 5){
+        let result = document.getElementById("result");
+        result.innerText = "You Lost! " + i + " : " + j;
+        disable();
+    }
 }
 
 
@@ -149,7 +178,6 @@ function scissorround(){
         let a = playerchoice.innerText;
         let b = computorchoice.innerText;
         let string = a+b;
-        console.log(i);
         if (string ==="scissorscissor") {
             return "Its a Tie! Try again.";
         }
@@ -163,5 +191,15 @@ function scissorround(){
             computorcounter.innerText = j;
             return "You lose! Rock beat\’s scissor";
         }
+    }
+    if(i === 5){
+        let result = document.getElementById("result");
+        result.innerText = "You Won! " + i + " : " + j;
+        disable();
+    }
+    if(j === 5){
+        let result = document.getElementById("result");
+        result.innerText = "You Lost! " + i + " : " + j;
+        disable();
     }
 }
