@@ -18,10 +18,11 @@ let computorcounter = document.getElementById("ccounter");
 
 //ending game when one has 5 points & result
 function disable(){
-    buttonrock.disabled = "true";
-    buttonpaper.disabled = "true";
-    buttonscissor.disabled = "true";
+    buttonrock.disabled = true;
+    buttonpaper.disabled = true;
+    buttonscissor.disabled = true;
 }
+
 
 
 //all 3 buttons display round played
@@ -72,6 +73,7 @@ function rockround(){
             return "You lose! Paper beat\’s rock";
         }
     }
+    //showing result and disable when reached score of 5
     if(i === 5){
         let result = document.getElementById("result");
         result.innerText = "You Won! " + i + " : " + j;
@@ -132,6 +134,7 @@ function paperround(){
             return "You lose! Scissor beat\’s paper";
         }
     }
+    //showing result and disable when reached score of 5
     if(i === 5){
         let result = document.getElementById("result");
         result.innerText = "You Won! " + i + " : " + j;
@@ -192,6 +195,7 @@ function scissorround(){
             return "You lose! Rock beat\’s scissor";
         }
     }
+    //showing result and disable when reached score of 5
     if(i === 5){
         let result = document.getElementById("result");
         result.innerText = "You Won! " + i + " : " + j;
@@ -202,4 +206,21 @@ function scissorround(){
         result.innerText = "You Lost! " + i + " : " + j;
         disable();
     }
+}
+
+
+
+//adding reset button
+const resetbutton = document.getElementById("reset");
+resetbutton.addEventListener('click', reset);
+function reset(){
+    container.replaceChildren();
+    result.replaceChildren();
+    playercounter.replaceChildren();
+    computorcounter.replaceChildren();
+    i=0;
+    j=0;
+    buttonrock.disabled = false;
+    buttonpaper.disabled = false;
+    buttonscissor.disabled = false;
 }
