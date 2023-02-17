@@ -5,16 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="code.js" defer></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Sicssors</title>
 </head>
 <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissor">Scissors</button>
-    <button id="reset">reset</button>
-    <div id="pcounter"></div>
-    <div id="ccounter"></div>
-    <div id="container"></div>
-    <div id="result"></div>
+<div class="center">
+    <h1 class="headline">Rock Paper Scissors</h1>
+    <div class="btn">
+        <button id="rock" >Rock</button>
+        <button id="paper" >Paper</button>
+        <button id="scissor" >Scissors</button>
+    </div>
+    <div class="table">
+        <div class="playerchoice">Your Choice</div>
+        <div class="tableresult">Result</div>
+        <div class="computorchoice">Computor</div>
+    </div>
+    <div id="container" class="container"></div>
+    <div class="counter">
+        <div id="pcounter"></div>
+        <div id="ccounter"></div>
+    </div>
+    <div id="result" class="endresult"></div>
+    <div class="reset"><button id="reset">reset</button></div>
+</div>
 </body>
 </html>
